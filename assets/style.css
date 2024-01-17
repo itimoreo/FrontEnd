@@ -1,0 +1,567 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/** end reset css**/
+body {
+	max-width: 1140px;
+	margin:auto;
+	font-family: 'Work Sans' ;
+	font-size: 14px;
+}
+header {
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0;
+	padding-top: 15px;
+}
+section {
+	margin: 50px 0
+}
+
+h1{
+	display: flex;
+	flex-direction: column;
+	font-family: 'Syne';
+	font-size: 22px;
+	font-weight: 800;
+	color: #B1663C
+}
+
+h1 > span {
+	font-family: 'Work Sans';
+	font-size:10px;
+	letter-spacing: 0.1em;
+;
+}
+
+h2{
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 30px;
+	color: #1D6154
+}
+nav ul {
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+
+}
+nav li {
+	padding: 0 10px;
+	font-size: 1.2em;
+}
+
+li:hover {
+	color: #B1663C;
+}
+#introduction {
+	display: flex;
+	align-items: center;
+}
+#introduction figure {
+	flex: 1
+}
+#introduction img {
+	display: block;
+	margin: auto;
+	width: 80%;
+}
+
+#introduction article {
+	flex: 1
+}
+#introduction h2 {
+	margin-bottom: 1em;
+}
+
+#introduction p {
+	margin-bottom: 0.5em;
+}
+#portfolio h2 {
+	text-align: center;
+	margin-bottom: 1em;
+}
+/* Mon CSS */
+i {
+    color: black;
+}
+i.fa-regular.fa-pen-to-square{
+	color: white;
+	font-size: 12px;
+	margin-right: 10px;
+}
+
+.title-and-modalbtn{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+button#openModalBtn{
+	cursor: pointer;
+	margin-top: 5px;
+	padding-left: 15px;
+    font-family: 'Work Sans';
+    font-size: 15px;
+    font-weight: 500;
+    border: none; 
+    background-color: white;
+    outline: none; 
+}
+#openModalBtn i.fa-regular.fa-pen-to-square{
+	color: black;
+	font-size: 15px;
+	margin-right: 10px;
+}
+/* Le conteneur de la fenêtre modale - en le positionnant fixe, on peut le faire remplir tout l'écran */
+.modal {
+	display: none; 
+	position: fixed;
+	z-index: 1; 
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%;
+	overflow: auto; 
+	background-color: rgb(0,0,0); 
+	background-color: rgba(0,0,0,0.4); 
+}
+  
+  /* Contenu de la fenêtre modale */
+  .modal-content {
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 630px;
+    height: 688px;
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-content h3 {
+	font-family: 'Work Sans';
+	font-weight: 400;
+	font-size: 26px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+button#applyChangesBtn{
+	display: none;
+}
+#separator {
+    width: 50%; 
+    border: none; 
+    border-top: 1px solid black; 
+    margin: 55px;
+}
+#openAddProjectModalBtn {
+	margin-top: 60px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 20px; 
+    border: none; 
+    background-color: #1D6154; 
+    color: white;
+    cursor: pointer; 
+}
+
+ 
+/* Bouton de fermeture de la fenêtre modale */
+.close {
+    color: black;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute; 
+    top: 10px; 
+    right: 10px;
+}
+  
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+
+#modalProjectsContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 10px;
+    overflow-y: auto; /* Ajoute un défilement vertical si nécessaire */
+    max-height: calc(105px * 16);
+}
+
+#modalProjectsContainer img {
+    width: 75px;
+    height: 105px;
+    object-fit: cover;
+ 
+}
+
+#modalProjectsContainer .project {
+    position: relative; 
+}
+
+#modalProjectsContainer .deleteButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#loginButton{
+	cursor: pointer;
+	font-family: 'Syne';
+	font-size: 1.2em;
+	font-weight: 400;
+	border: 0px solid ;
+	background-color: white;
+	outline: none;
+}
+#loginButton:hover{
+	color: #B1663C;
+}
+
+#editButton i .fa-pen-to-square{
+	color: white;
+	font-size: 20px;
+	margin-right: 10px;
+
+}
+
+
+#editButton{
+	font-family: 'Work Sans';
+	font-size: 12px;
+	font-weight: 500;
+	color: white;
+	background-color: black;
+	border: 0px solid ;
+	padding: 15px;
+	width: 100%; 
+	position: fixed; 
+	top: 0; 
+	left: 0; 
+	text-align: center; 
+	z-index: 1000; 
+}
+
+
+.login{
+	cursor: pointer;
+}
+div#login_form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: auto;
+}
+#login_form form{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#login_form label{
+	font-family: "Syne";
+	font-weight: 500;
+	font-size: 20px;
+	color: #1D6154;
+}
+#login_form input[type="email"], #login_form input[type="password"]{
+	width: 200px;
+	height: 30px;
+	border-radius: 5px;
+	border: 1px solid #ffffff;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.15);
+}
+#login_form input{
+	margin: 10px;
+}
+#login_form input[type="submit"]{
+	font-family: "Syne";
+	font-weight: 500;
+	font-size: 15px;
+	color: #ffffff;
+	background-color: #1D6154;
+	border: 1px solid #ffffff;
+	border-radius: 60px;
+	padding: 15px;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px;
+}
+
+.p-Login{
+	display: flex;
+	flex-direction: column;
+	font-family: 'Syne';
+	font-size: 22px;
+	font-weight: 800;
+	color: #B1663C;
+	margin-bottom: 35px;
+}
+
+#portfolio .filter {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.filter button {
+	font-family: "Syne";
+	font-weight: 500;
+	font-size: 20px;
+	margin-top: 2%;
+	margin-bottom: 8%;
+}
+.F{
+	cursor: pointer;
+	border: solid 2px #1D6154 ;
+	border-radius: 50px;
+	padding: 1%;
+	margin-left: 35px;
+	color: #1D6154;
+}
+.F:active, .F-activated {
+    color: white;
+    background-color:rgba(29, 97, 84, 1);
+}
+.F-activated{
+    color: white !important;
+    background-color:rgba(29, 97, 84, 1) !important;
+}
+#fileHelp {
+    font-size: 12px; 
+	top: 15px;
+	position: relative;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+label.custom-file-upload{
+	cursor: pointer;
+	font-family: 'Work Sans';
+	font-weight: 700;
+	font-size: 14px;
+	border: none; 
+	background-color:#CBD6DC;
+	color: white;
+	cursor: pointer; 
+	border-radius: 60px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+/* Style général du formulaire */
+#addProjectForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Style des labels */
+#addProjectForm label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Style des inputs et du select */
+#addProjectForm input, #addProjectForm select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Style du bouton de soumission */
+#addProjectForm input[type="submit"] {
+    background-color: #1D6154; 
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+/* Style du bouton de soumission au survol */
+#addProjectForm input[type="submit"]:hover {
+    background-color: #45a049; 
+}
+
+/* Style de l'input de fichier */
+#addProjectForm input[type="file"] {
+    background: no-repeat center center; 
+    background-size: cover; 
+    color: #000; 
+}
+.custom-file-upload {
+    display: inline-block;
+    cursor: pointer;
+    background: url(assets\icons\Vector.png);
+    color: white;
+    border: none;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 50px;
+	position: absolute; 
+    bottom: 10px;
+}
+#previewContainer {
+	margin-bottom: 40px;
+	z-index: 5;
+	background-size: cover;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Permet de positionner les enfants absolument */
+    width: 100%;
+    height: 230px;
+    background-image: url('./icons/Vector.png');
+    background-image: url('./icons/Vector.png');
+	background-size: 100px; /* Redimensionne l'image pour qu'elle couvre entièrement l'élément */
+	background-repeat: no-repeat; /* Supprime le quadrillage de l'image */
+	background-color:#E8F1F6;
+	background-position-x: 165px;
+	background-position-y: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#imagePreview {
+	border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+	object-fit: cover;
+	position: relative;
+    top: 11px;
+    height: 239px;
+    width: 275px;
+    max-width: 185px;
+    max-height: 225px;
+}
+
+
+/* Fin mon CSS */
+.gallery {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+}
+
+.gallery img {
+	width: 100%;
+
+}
+#contact {
+	width: 50%;
+margin: auto;
+}
+#contact > * {
+	text-align: center;
+
+}
+#contact h2{
+	margin-bottom: 20px;
+}
+#contact form {
+	text-align: left;
+	margin-top:30px;
+	display: flex;
+	flex-direction: column;
+}
+
+#contact input {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+#contact label {
+	margin: 2em 0 1em 0;
+}
+#contact textarea {
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+input[type="submit"]{
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin : 2em auto ;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px ;
+}
+
+footer nav ul {
+	display: flex;
+	justify-content: flex-end;
+	margin: 2em
+}
+
