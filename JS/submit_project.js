@@ -1,4 +1,5 @@
 // Fonction qui ajoute un projet à la modal
+// Fonction qui ajoute un projet à la modal
 function addProjectToModal(project) {
     // On récupère le conteneur des projets
     const modalProjectsContainer = document.getElementById('modalProjectsContainer');
@@ -6,16 +7,17 @@ function addProjectToModal(project) {
     // On crée un élément figure
     let figure = document.createElement('figure');
     figure.id = `project${project.id}`; // Ajoute un ID à l'élément de projet
+    figure.style.position = 'relative';
 
     // On crée un élément img
     let img = document.createElement('img');
     img.src = project.imageUrl;
     figure.appendChild(img);
 
-    // On crée un élément figcaption
-    let figcaption = document.createElement('figcaption');
-    figcaption.textContent = project.title;
-    figure.appendChild(figcaption);
+    // On ne crée pas d'élément figcaption pour le titre
+
+    let deleteButton = createDeleteButton(project.id);
+    figure.appendChild(deleteButton);
 
     modalProjectsContainer.appendChild(figure);
 }
@@ -25,7 +27,7 @@ function addProjectToGallery(project) {
     const gallery = document.getElementById('gallery');
 
     let figure = document.createElement('figure');
-    figure.id = `project${project.id}`; // Ajoute un ID à l'élément de projet
+    figure.id = `galleryProject${project.id}`; // Ajoute un ID unique à l'élément de projet
     figure.classList.add(`f${project.categoryId}`); // Ajoute la categoryId comme une classe
 
     let img = document.createElement('img');

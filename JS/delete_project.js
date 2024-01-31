@@ -1,15 +1,33 @@
 // Cette fonction nous permet de créer un bouton de suppression
-function createDeleteButton() {
+function createDeleteButton(projectId) {
     var deleteButton = document.createElement('button');
     deleteButton.className = 'deleteButton';
     deleteButton.style.backgroundColor = 'black'; 
     deleteButton.style.border = 'none'; 
     deleteButton.style.cursor = 'pointer'; 
+    deleteButton.style.position = 'absolute'; // Positionne le bouton de suppression absolument
+    deleteButton.style.top = '10px'; // Positionne le bouton de suppression à 10px du haut de l'élément figure
+    deleteButton.style.right = '10px';
 
     var deleteIcon = document.createElement('i');
     deleteIcon.className = 'fa-solid fa-trash-can';
     deleteIcon.style.color = 'white'; 
     deleteButton.appendChild(deleteIcon);
+
+    deleteButton.addEventListener('click', function() {
+        // Supprime l'élément figure correspondant de la modal
+        var modalFigure = document.getElementById(`project${projectId}`);
+        if (modalFigure) {
+            modalFigure.remove();
+        }
+
+        var galleryFigure = document.getElementById(`galleryProject${projectId}`);
+        if (galleryFigure) {
+            galleryFigure.remove();
+        }
+
+    
+    });
 
     return deleteButton;
 }
